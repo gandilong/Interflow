@@ -53,23 +53,25 @@ public class TMenuBar extends JMenuBar{
      private JMenuItem defined=null;//自定义回复
      
     
-     
-    public TMenuBar(){
+    private Interflow parent;
+    public TMenuBar(Interflow p){
        super();
+       parent=p;
        loginInit();
-       //initMenu();
     }
     
-    private void loginInit(){
+    public void loginInit(){
+    	this.removeAll();
     	loginSet=new JMenu("设置");
     	serverSet=new JMenuItem("服务器设置");
+    	serverSet.addActionListener(parent);
     	loginSet.add(serverSet);
     	add(loginSet);
     }
     
      public void initMenu(){
                          
-           
+           this.removeAll();
            file=new JMenu("文件");
            people=new JMenu("联系人");
            operation=new JMenu("操作");

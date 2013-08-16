@@ -3,6 +3,9 @@ package com.thang.view.login;
 import javax.swing.JPanel;
 
 import com.thang.tools.model.ImagePath;
+import com.thang.tools.model.LoginModel;
+import com.thang.tools.util.ImageUtils;
+import com.thang.tools.util.StrUtils;
 import com.thang.view.Interflow;
 
 public class LoginPanel extends JPanel{
@@ -41,6 +44,10 @@ public class LoginPanel extends JPanel{
 		 return new String(upassInput.getPassword());
 	 }
 	 
+	 public String getServiceName(){
+		 return serviceNameInput.getText();
+	 }
+	 
 	 /**
 	  * 是否记住密码
 	  * @return
@@ -57,11 +64,32 @@ public class LoginPanel extends JPanel{
 		 return autoCheck.isSelected();
 	 }
 	 
+	 /**
+	  * 代码方式执行登陆
+	  */
+	 public void login(){
+		 loginBtn.doClick();
+	 }
 	 
+	 public void initByLoginModel(LoginModel model){
+			if(StrUtils.validStr(model.getServiceName())){
+				serviceNameInput.setText(model.getServiceName());
+			}
+			if(StrUtils.validStr(model.getUname())){
+				unameInput.setText(model.getUname());
+			}
+			if(model.isRem()){
+				upassInput.setText(model.getUpass());
+				remCheck.setSelected(true);
+			}
+			if(model.isAuto()){
+				autoCheck.setSelected(true);
+			}
+	 }
 	 
 	 private void initComponents() {
 
-		 loginLabel = new javax.swing.JLabel();
+		    loginLabel = new javax.swing.JLabel();
 	        unameLabel = new javax.swing.JLabel();
 	        upassLabel = new javax.swing.JLabel();
 	        serviceNameLabel = new javax.swing.JLabel();
@@ -75,6 +103,7 @@ public class LoginPanel extends JPanel{
 
 	        setPreferredSize(new java.awt.Dimension(300, 560));
 
+	        loginLabel.setIcon(ImageUtils.getImageIcon(ImagePath.Login));
 	        unameLabel.setText("账号：");
 
 	        upassLabel.setText("密码：");
@@ -87,7 +116,7 @@ public class LoginPanel extends JPanel{
 
 	        loginBtn.setText("登 陆");
 
-	        otherBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImagePath.Login_Arrow))); // NOI18N
+	        otherBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource(ImagePath.Arrow_Right))); // NOI18N
 
 	        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
 	        this.setLayout(layout);

@@ -10,10 +10,15 @@ import javax.swing.UIManager;
 
 import com.thang.tools.util.SysteUtils;
 import com.thang.view.Interflow;
+import com.thang.view.MyTray;
 
 public class Application {
 
 	
+	/**
+	 * 应用从这里启动
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		try{
 		   
@@ -30,6 +35,7 @@ public class Application {
 		   java.awt.EventQueue.invokeLater(new Runnable() {
 	            public void run() {
 	            	Interflow interflow=new Interflow();
+	            	MyTray tray=new MyTray(interflow);
 	            	interflow.setVisible(true);
 	            }
 	        });

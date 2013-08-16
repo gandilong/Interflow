@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config> 
+  <login> 
+    <service_name>lbdz</service_name>  
+    <server_host>localhost</server_host>  
+    <server_port>5222</server_port>  
+    <uname>admin</uname>  
+    <upass>su</upass>  
+    <rem>false</rem>  
+    <auto>false</auto>  
+    <proxy>false</proxy>  
+    <proxy_host></proxy_host>  
+    <proxy_port>0</proxy_port>  
+    <proxy_done>0</proxy_done>  
+    <!-- http,socket4,socket5,none -->  
+    <proxy_uname></proxy_uname>  
+    <proxy_upass></proxy_upass> 
+  </login>  
+  <main/> 
+</config>

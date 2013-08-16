@@ -1,0 +1,16 @@
+2013-08-16 12:08:28,421  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 12:10:20,218  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:21:02,015  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:23:28,562 ERROR [AWT-EventQueue-0] com.thang.core.DefaultClient -Here is a error:SASL authentication DIGEST-MD5 failed: not-authorized
+2013-08-16 14:26:31,890  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:27:11,375 ERROR [AWT-EventQueue-0] com.thang.core.DefaultClient -Here is a error:SASL authentication DIGEST-MD5 failed: not-authorized
+2013-08-16 14:31:54,796 ERROR [AWT-EventQueue-0] com.thang.core.DefaultClient -Here is a error:SASL authentication DIGEST-MD5 failed: not-authorized
+2013-08-16 14:32:12,734  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:33:30,296  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:34:57,000  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 14:42:42,906 ERROR [AWT-EventQueue-0] com.thang.core.DefaultClient -Here is a error:SASL authentication DIGEST-MD5 failed: not-authorized
+2013-08-16 14:46:03,656 ERROR [AWT-EventQueue-0] com.thang.core.DefaultClient -Method:start Here is a error:SASL authentication DIGEST-MD5 failed: not-authorized
+2013-08-16 14:49:29,328  INFO [AWT-EventQueue-0] com.thang.core.DefaultClient -Start Successful !
+2013-08-16 16:58:19,843  INFO [AWT-EventQueue-0] com.thang.view.Interflow -Start Successful !
+2013-08-16 17:23:25,765  INFO [AWT-EventQueue-0] com.thang.view.Interflow -Start Successful !
+2013-08-16 17:30:45,000  INFO [AWT-EventQueue-0] com.thang.view.Interflow -Start Successful !

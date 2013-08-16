@@ -3,11 +3,11 @@ package com.thang.view.main;
 import javax.swing.JPanel;
 
 /**
- * 主面板，其子面板由HeadPanel , BodyPanel组成
- * @author gandilong
+ * 显示用户的联系人的面板
+ * @author Gandilong
  *
  */
-public class MainPanel extends JPanel{
+public class BodyPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 

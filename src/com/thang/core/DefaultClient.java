@@ -4,11 +4,13 @@ import org.apache.log4j.Logger;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.packet.Presence;
+
+import com.thang.tools.model.MyStatus;
 
 public class DefaultClient {
 
 	private XMPPConnection connection=null;
-	
 	private static Logger logger=Logger.getLogger(DefaultClient.class);
 	
 	/**
@@ -42,21 +44,18 @@ public class DefaultClient {
 	/**
 	 * 开启服务
 	 */
-	public void start(){
-		try {
+	public void start(String uname,String upass)throws XMPPException{
 			connection.connect();
-			
-			logger.info("Start Successful !");
-		} catch (XMPPException e) {
-			e.printStackTrace();
-			logger.error("Here is a error:"+e.getMessage());
-		}
+			connection.login(uname, upass);
 	}
 	
 	/**
 	 * 关闭服务
 	 */
 	public void close(){
+		Presence presence = new Presence(Presence.Type.unavailable);
+		presence.setStatus(MyStatus.offline);
+		connection.sendPacket(presence);
 		connection.disconnect();
 	}
 	
