@@ -1,0 +1,19 @@
+user.home 可以获取当前用户的主目录
+
+java.specification.version 获取当前JDK的版本号
+
+java.class.path 获取classpath
+
+user.name 获取当前用户名
+
+java.home 获取JDK路径
+
+sun.os.patch.level 获取系统版本号..也可以说是补丁号 我的显示为Service Pack 2
+
+user.dir 当前程序的主目录
+
+os.arch 显示系统操作系统的类型 我的显示为X86
+
+os.version 显示系统内部版本号
+
+java.io.tmpdir 显示当前系统的临时目录

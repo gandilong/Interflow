@@ -4,6 +4,10 @@
  */
 package com.thang.view;
 
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -58,6 +62,7 @@ public class TMenuBar extends JMenuBar{
        super();
        parent=p;
        loginInit();
+       
     }
     
     public void loginInit(){
@@ -98,6 +103,7 @@ public class TMenuBar extends JMenuBar{
            add(operation);
            add(help);
            
+           initItemEvent();
            //this.setJMenuBar(jmb);
     }
     
@@ -142,6 +148,19 @@ public class TMenuBar extends JMenuBar{
            myStatus.addSeparator();
            myStatus.add(away);
            
+    }
+    
+    
+    private void initItemEvent(){
+    	logout.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interflow.getClient().logout();
+				CardLayout card=(CardLayout)parent.getContentPane().getLayout();
+				card.show(parent.getContentPane(), "loginPanel");
+			}
+		});
     }
     
 }

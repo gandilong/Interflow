@@ -8,7 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 
-import com.thang.tools.util.SysteUtils;
+import com.thang.tools.util.SysUtils;
 import com.thang.view.Interflow;
 import com.thang.view.MyTray;
 
@@ -17,12 +17,12 @@ public class Application {
 	
 	/**
 	 * 应用从这里启动
-	 * @param args
+	 * @param args 
 	 */
 	public static void main(String[] args) {
 		try{
 		   
-			if(SysteUtils.isWindows()) {
+			if(SysUtils.isWindows()) {
                 JFrame.setDefaultLookAndFeelDecorated(true);
 	            JDialog.setDefaultLookAndFeelDecorated(true);
             }

@@ -6,11 +6,14 @@ import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.packet.Presence;
 
+import com.thang.tools.model.MyFilter;
 import com.thang.tools.model.MyStatus;
 
 public class DefaultClient {
 
 	private XMPPConnection connection=null;
+	
+	private PacketGuard guard=null;
 	private static Logger logger=Logger.getLogger(DefaultClient.class);
 	
 	/**
@@ -24,6 +27,7 @@ public class DefaultClient {
 		}else{
 			connection=new XMPPConnection(serverName);
 		}
+		init();
 	}
 	
 	/**
@@ -37,6 +41,11 @@ public class DefaultClient {
 		}else{
 			connection=new XMPPConnection(config);	
 		}
+		init();
+	}
+	
+	private void init(){
+		guard=new PacketGuard(connection.getChatManager());
 	}
 	
 	
@@ -44,9 +53,18 @@ public class DefaultClient {
 	/**
 	 * 开启服务
 	 */
-	public void start(String uname,String upass)throws XMPPException{
+	public void login(String uname,String upass)throws XMPPException{
 			connection.connect();
 			connection.login(uname, upass);
+	}
+	
+	public void start(){
+		connection.addPacketListener(guard,MyFilter.getInstance());
+		connection.addPacketInterceptor(guard,MyFilter.getInstance());
+	}
+	
+	public XMPPConnection getConnection(){
+		return connection;
 	}
 	
 	/**
@@ -58,6 +76,5 @@ public class DefaultClient {
 		connection.sendPacket(presence);
 		connection.disconnect();
 	}
-	
 	
 }

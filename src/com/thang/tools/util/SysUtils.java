@@ -1,6 +1,6 @@
 package com.thang.tools.util;
 
-public class SysteUtils {
+public class SysUtils {
 
 	public static boolean isWindows(){
 		return System.getProperty("os.name").toLowerCase().startsWith("windows");

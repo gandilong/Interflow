@@ -7,7 +7,7 @@
     <server_port>5222</server_port>  
     <uname>admin</uname>  
     <upass>su</upass>  
-    <rem>false</rem>  
+    <rem>true</rem>  
     <auto>false</auto>  
     <proxy>false</proxy>  
     <proxy_host></proxy_host>  

@@ -1,10 +1,11 @@
 package com.thang.view.login;
 
+import java.awt.event.KeyEvent;
+
 import javax.swing.JPanel;
 
 import com.thang.tools.model.ImagePath;
 import com.thang.tools.model.LoginModel;
-import com.thang.tools.util.ImageUtils;
 import com.thang.tools.util.StrUtils;
 import com.thang.view.Interflow;
 
@@ -88,7 +89,6 @@ public class LoginPanel extends JPanel{
 	 }
 	 
 	 private void initComponents() {
-
 		    loginLabel = new javax.swing.JLabel();
 	        unameLabel = new javax.swing.JLabel();
 	        upassLabel = new javax.swing.JLabel();
@@ -103,12 +103,17 @@ public class LoginPanel extends JPanel{
 
 	        setPreferredSize(new java.awt.Dimension(300, 560));
 
-	        loginLabel.setIcon(ImageUtils.getImageIcon(ImagePath.Login));
 	        unameLabel.setText("账号：");
 
 	        upassLabel.setText("密码：");
 
 	        serviceNameLabel.setText("服务器：");
+
+	        upassInput.addKeyListener(new java.awt.event.KeyAdapter() {
+	            public void keyPressed(java.awt.event.KeyEvent evt) {
+	                upassInputKeyPressed(evt);
+	            }
+	        });
 
 	        remCheck.setText("记住密码");
 
@@ -168,11 +173,16 @@ public class LoginPanel extends JPanel{
 	                    .addComponent(remCheck)
 	                    .addComponent(autoCheck))
 	                .addGap(18, 18, 18)
-	                .addComponent(loginBtn)
-	                .addGap(0, 69, Short.MAX_VALUE))
+	                .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+	                .addGap(0, 51, Short.MAX_VALUE))
 	        );
 	 }
 	 
+	 private void upassInputKeyPressed(java.awt.event.KeyEvent evt) {
+	     if(KeyEvent.VK_ENTER==evt.getKeyCode()){
+	            login();
+	     }
+	 }
 	 
 	
 }
